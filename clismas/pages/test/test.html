@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- D3 4.4 -->
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <!-- W 1.6.3  -->
+  <!-- handles common tasks related to window resizing  -->
+  <script src="../../plugins/W/W.min.js"></script>
+</head>
+<style type="text/css">
+  .bar {
+    fill: steelblue;
+  }
+
+  .axis text {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .x.axis path {
+    display: none;
+  }
+
+  .line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+
+  .axis--x path {
+    display: none;
+  }
+
+</style>
+<body>  
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="../../plugins/W/W.min.js"></script>
+
+  <svg width="800" height="300" class="bar-chart"></svg>
+
+  <script type="text/javascript">
+
+//-------------
+//- d3 line CHART -
+//--------------
+var svg = d3.select(".bar-chart"),
+margin = {top: 20, right: 30, bottom: 30, left: 80},
+width = +svg.attr("width") - margin.left - margin.right,
+height = +svg.attr("height") - margin.top - margin.bottom,
+g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+var value;
+
+var y = d3.scaleBand()
+.range([0, height])
+.paddingInner([.2])
+.paddingOuter([.1]);
+
+var x = d3.scaleLinear()
+.range([0, width]);
+
+
+function initBar() {
+
+  d3.tsv("data.tsv", type, function(error, data) {
+    if (error) throw error;
+
+    value = data;
+
+    y.domain(data.map(function(d) { return d.name; }));
+    x.domain([0, d3.max(data, function(d) { return d.value; })]);
+
+    g.append("g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x));
+
+    g.append("g")
+    .attr("class", "y axis")
+    .call(d3.axisLeft(y));
+
+    g.selectAll(".bar")
+    .data(data)
+    .enter().append("rect")
+    .attr("class", "bar")
+    .attr("y", function(d) { return y(d.name); })
+    .attr("x", function(d) { return 0; })
+    .attr("width", function(d) { return x(d.value); })
+    .attr("height", y.bandwidth());
+
+  });
+
+}
+
+function type(d) {
+d.value = +d.value; // coerce to number
+return d;
+}
+
+function initEvents() {
+// Set up event handler for resizes
+W.addListener(update);
+}
+
+/*----
+UPDATE
+----*/
+function update() {
+  updateScales();
+  updateAxes();
+  updateBar();
+}
+
+function updateScales() {
+  width = d3.min([W.getViewportWidth(), +svg.attr("width")]) - margin.right - margin.left;
+
+  x = d3.scaleLinear()
+  .domain([0, d3.max(value, function(d) { return d.value; })])
+  .range([0, width]);
+
+}
+
+function updateAxes() {
+  g.select("g.x")
+  .call(d3.axisBottom(x));
+
+}
+
+function updateBar() {
+  d3.selectAll('rect')
+  .attr("width", function(d) { return x(d.value); })
+}
+
+initBar();
+
+initEvents();
+
+</script>
+
+</body>
+</html>

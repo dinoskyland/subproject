@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CLISMAS</title>
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<!-- Bootstrap 3.3.6 -->
+	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+	<!-- Theme style -->
+	<link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+	<!-- DataTables -->
+	<link rel="stylesheet" href="../../plugins/datatables/dataTables.bootstrap.css">
+
+	<style>
+		.title {
+			background: #e8f0fc;
+		}
+		td, th{text-align: center;}
+
+		.modal .modal-body {
+			max-height: 640px;
+			overflow-y: auto;
+		}
+
+		body {
+			margin: 50px;
+		}
+	</style>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+	<!-- Chat box -->
+	<div class="box-header">
+			<h3 class="box-title">Subject Information</h3>
+		</div>
+		<!-- /.box-header -->
+		<div class="box-body">
+			<table class="table table-bordered" id="subjectInfo">
+				<tbody>
+
+				</tbody>
+			</table>
+		</div>
+		<!-- /.box-body -->
+	<!-- /.box -->
+
+		<div class="box-header">
+			<h3 class="box-title">Result</h3>
+		</div>
+		<!-- /.box-header -->
+		<div class="box-body">
+			<table class="table table-bordered" id="resultTable">
+				<thead>
+					<tr>								
+						<th>Item</th>
+						<th>Abn</th>
+						<th>Result</th>
+						<th>Reference</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				</tbody>
+			</table>
+		</div>
+		<!-- /.box-body -->
+	<!-- /.box -->
+	<!-- ./wrapper -->
+
+	<!-- jQuery 2.2.4 -->
+	<script src="http://code.jquery.com/jquery-2.2.4.min.js" ></script>
+	<!-- Bootstrap 3.3.6 -->
+	<script src="../../bootstrap/js/bootstrap.min.js"></script>
+	<!-- DataTables -->
+	<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    if(window.opener && !window.opener.closed){
+		var data= window.result;
+		$("#resultTable > tbody > tr").remove();
+		$("#resultTable > tbody").append(data);
+		
+		data = window.subjectinfo;
+		$("#subjectInfo > tbody > tr").remove();
+		$("#subjectInfo > tbody").append(data);
+    }
+</script>
+</body>
+</html>

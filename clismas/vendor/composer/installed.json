@@ -1,0 +1,58 @@
+[
+    {
+        "name": "coolsms/php-sdk",
+        "version": "v2.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/coolsms/php-sdk.git",
+            "reference": "d4ce6c4dc04ed17ddf2bfb9a018eb880f260da7c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/coolsms/php-sdk/zipball/d4ce6c4dc04ed17ddf2bfb9a018eb880f260da7c",
+            "reference": "d4ce6c4dc04ed17ddf2bfb9a018eb880f260da7c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.0"
+        },
+        "time": "2016-07-13 01:48:06",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Nurigo\\": "app/Nurigo"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "nurigo",
+                "email": "contact@nurigo.net",
+                "homepage": "http://coolsms.co.kr",
+                "role": "Developer"
+            }
+        ],
+        "description": "Send message using PHP and RestAPI[TEST]",
+        "homepage": "http://coolsms.co.kr",
+        "keywords": [
+            "TextMessage",
+            "cellphone",
+            "cool",
+            "coolsms",
+            "global",
+            "lms",
+            "message",
+            "messages",
+            "mms",
+            "mobile",
+            "nurigo",
+            "phone",
+            "sms"
+        ]
+    }
+]

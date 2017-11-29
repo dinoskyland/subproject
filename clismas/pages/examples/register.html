@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>LIM | Registration Page</title>
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<!-- Bootstrap 3.3.6 -->
+	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+	<!-- Ionicons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+	<!-- Theme style -->
+	<link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+	<!-- iCheck -->
+	<link rel="stylesheet" href="../../plugins/iCheck/square/blue.css">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition register-page">
+	<div class="register-box">
+		<div class="register-logo">
+			<a href="../../index2.html"><b>LIM</b></a>
+		</div>
+
+		<div class="register-box-body">
+			<p class="login-box-msg">Register a new membership</p>
+			<form class="form-horizontal" method="post" action="#">
+				<div class="box-body">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">업체지정</label>
+						<div class="col-sm-5">
+							<div class="row">
+								<form>
+									<div class="col-xs-5">
+										<input type="text" class="form-control" id="partner">
+									</div>
+									<div class="col-xs-5">
+										<button type="button" class="btn btn-primary" id="search">Search</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<!-- /.form-group -->
+
+					<div class="form-group">
+						<label for="address" class="col-sm-2 control-label">아이디</label>
+						<div class="col-sm-5">
+							<div class="row">
+								<form>
+									<div class="col-xs-5">
+										<input type="text" class="form-control" id="userid">
+									</div>
+									<div class="col-xs-5">
+										<button type="button" class="btn btn-primary" id="sameid">중복확인</button>
+									</div>
+								</form>
+							</div>
+							<input type="checkbox"> 관리자
+							<!-- /.input group -->
+						</div>
+					</div>
+					<!-- /.form group -->
+
+					<div class="form-group">
+						<label for="address" class="col-sm-2 control-label">비밀번호</label>
+						<div class="col-sm-5">
+							<input type="password" class="form-control" id="password">
+							<!-- /.input group -->
+						</div>
+					</div>
+					<!-- /.form group -->
+
+					<div class="form-group">
+						<label for="address" class="col-sm-2 control-label">비밀번호확인</label>
+						<div class="col-sm-5">
+							<input type="password" class="form-control" id="confirm">
+							<!-- /.input group -->
+						</div>
+					</div>
+					<!-- /.form group -->
+
+					<div class="form-group">
+						<label for="address" class="col-sm-2 control-label">담당자명</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="person">
+							<!-- /.input group -->
+						</div>
+					</div>
+					<!-- /.form group -->
+
+					<div class="form-group">
+						<label for="address" class="col-sm-2 control-label">연락처</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="phone">
+							<!-- /.input group -->
+						</div>
+					</div>
+					<!-- /.form group -->
+
+					<div class="form-group">
+						<label for="address" class="col-sm-2 control-label">이메일</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="email">
+							<!-- /.input group -->
+						</div>
+					</div>
+					<!-- /.form group -->
+
+					<div class="form-group">
+						<label for="address" class="col-sm-2 control-label">주소</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" name="address">
+							<!-- /.input group -->
+						</div>
+					</div>
+					<!-- /.form group -->
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label">권한</label>
+						<div class="col-sm-10">
+							<div class="row">
+								<div class="col-xs-3">
+									Lab Resut
+								</div>
+								<div class="col-xs-4">
+									<input type="checkbox" id="lab1"> Real Time Test Result
+								</div>
+								<div class="col-xs-3">
+									<input type="checkbox" id="lab2"> Result Statistics
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-3">
+									Visit Management
+								</div>
+								<div class="col-xs-4">
+									<input type="checkbox"> Visit Management
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-3">
+									Pickup Request
+								</div>
+								<div class="col-xs-3">
+									<input type="checkbox"> Pickup Request
+								</div>
+								<div class="col-xs-4">
+									<input type="checkbox"> Pickup Request History
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-3">
+									Kit Order
+								</div>
+								<div class="col-xs-3">
+									<input type="checkbox"> Kit Order
+								</div>
+								<div class="col-xs-3">
+									<input type="checkbox"> Order History
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-3">
+									Result Report
+								</div>
+								<div class="col-xs-3">
+									<input type="checkbox"> Result Report
+								</div>
+								<div class="col-xs-3">
+									<input type="checkbox"> Re-Report
+								</div>
+								<div class="col-xs-3">
+									<input type="checkbox"> Report Log
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-3">
+									Project
+								</div>
+								<div class="col-xs-3">
+									<input type="checkbox"> Project
+								</div>
+								<div class="col-xs-3">
+									<input type="checkbox"> Project
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /.form-group -->
+				<div class="row">
+					<div class="col-xs-9">
+						<div class="checkbox icheck">
+							<label>
+								<input type="checkbox"> I agree to the <a href="#">terms</a>
+							</label>
+						</div>
+					</div>
+					<!-- /.col -->
+					<div class="col-xs-3">
+						<button type="button" class="btn btn-primary btn-block btn-flat" id="register">Register</button>
+					</div>
+					<!-- /.col -->
+				</div>
+
+
+				</div>
+				<!-- /.box-body -->
+			</form>
+
+			<a href="login.html" class="text-center">I already have a membership</a>
+		</div>
+		<!-- /.form-box -->
+	</div>
+	<!-- /.register-box -->
+
+	<!-- Bootstrap 3.3.6 -->
+	<script src="../../bootstrap/js/bootstrap.min.js"></script>
+	<!-- iCheck -->
+	<script src="../../plugins/iCheck/icheck.min.js"></script>
+		<!-- jQuery 2.2.4 -->
+	<script src="http://code.jquery.com/jquery-2.2.4.min.js" ></script>
+	<script type="text/javascript" src="register.js"></script>
+	<script type="text/javascript" src="search.js"></script>
+
+	<script>
+		$(function () {
+			$('input').iCheck({
+				checkboxClass: 'icheckbox_square-blue',
+				radioClass: 'iradio_square-blue',
+      increaseArea: '20%' // optional
+  });
+		});
+	</script>
+</body>
+</html>

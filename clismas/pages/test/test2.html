@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- D3 4.4 -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <!-- W 1.6.3  -->
+    <!-- handles common tasks related to window resizing  -->
+    <script src="../../plugins/W/W.min.js"></script>
+</head>
+<style type="text/css">
+.bar {
+  float: left;
+  width: 30px;
+  margin-right: 20px;
+  background-color: #F4F5F7;
+  border: 1px solid #C5C5C5;
+}
+
+</style>
+<body>  
+<!-- jQuery 2.2.4 -->
+<script src="http://code.jquery.com/jquery-2.2.4.min.js" ></script>
+
+<div id="user" data-id="1234567890" data-user="johndoe" data-date-of-birth>John Doe</div>
+
+<script type="text/javascript">
+var el = document.querySelector('#user');
+    console.log('el.id ' + el.id);
+    console.log('el.id ' + el.prop('id'));
+    console.log('el.dataset.id ' + el.dataset.id);
+    console.log('el.dataset.user ' + el.dataset.user);
+
+// el.id == 'user'
+// el.dataset.id === '1234567890'
+// el.dataset.user === 'johndoe'
+// el.dataset.dateOfBirth === ''
+
+el.dataset.dateOfBirth = '1960-10-03'; // set the DOB.
+
+// 'someDataAttr' in el.dataset === false
+
+el.dataset.someDataAttr = 'mydata';
+// 'someDataAttr' in el.dataset === true
+
+</script>
+   
+</body>
+</html>
